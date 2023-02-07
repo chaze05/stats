@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css" integrity="sha512-giQeaPns4lQTBMRpOOHsYnGw1tGVzbAIHUyHRgn7+6FmiEgGGjaG0T2LZJmAPMzRCl+Cug0ItQ2xDZpTmEc+CQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="container">
+        
+        <header>
+            <div class="left-menu">
+
+            </div>
+            <div class="right-menu">
+
+            </div>
+        </header>
+        <div class="flex">
+            <div class="stats_holder">
+                <h3>Local CPU Usage %</h3>
+                <div class="circle" data-value="43" data-text="43%" data-color="red" id="circles-1"></div>
+                <div class="server_info">
+                    <span class="label">Current Time</span>
+                    <span class="val">12:10PM</span>
+                </div>
+            </div>
+            <div class="stats_holder">
+                <h3>Local Memory Usage %</h3>
+                <div class="circle" data-value="45" data-text="45%" data-color="yellow" id="circles-2"></div>
+                <div class="server_info">
+                    <span class="label">Server Uptime</span>
+                    <span class="val">10 Weeks, 3 Days</span>
+                </div>
+            </div>
+            <div class="stats_holder">
+                <h3>Local Array Usage (HDD Storage) %</h3>
+                <div class="circle" data-value="90" data-text="90%" data-color="green" id="circles-3"></div>
+                <div class="server_info">
+                    <span class="label">Local Storage Status</span>
+                    <span class="val txt-green">Online</span>
+                </div>
+            </div>
+            <div class="stats_holder">
+                <h3>Local Upload Speed</h3>
+                <div class="circle" data-value="34" data-text="50Mbps" data-color="pink" id="circles-4"></div>
+                <div class="server_info">
+                    <span class="label">Total Mins of Video Downloaded</span>
+                    <span class="val">55 Mins/Month</span>
+                </div>
+            </div>
+            <div class="stats_holder">
+                <h3>Local Download Speed</h3>
+                <div class="circle" data-value="80" data-text="80Mbps" data-color="#998989" id="circles-5"></div>
+                <div class="server_info">
+                    <span class="label">Total Mins of Video Archived</span>
+                    <span class="val">120 Mins/Month</span>
+                </div>
+            </div>
+            <div class="stats_holder">
+                <h3>Cloud Storage usage %</h3>
+                <div class="circle" data-value="42" data-text="42%" data-color="lightblue" id="circles-6"></div>
+                <div class="server_info">
+                    <span class="label">Cloud Storage Status</span>
+                    <span class="val txt-green">Online</span>
+                </div>
+            </div>
+            <div class="stats_holder">
+                <h3> AI Accuracy %</h3>
+                <div class="circle" data-value="91" data-text="91%" data-color="yellowgreen" id="circles-7"></div>
+                <div class="server_info">
+                    <span class="label">Number of Objects Detected</span>
+                    <span class="val">887 Objects/Month</span>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+    integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo="
+    crossorigin="anonymous"></script>
+    <script src="./circles.min.js"></script>
+    <script type="text/javascript">
+        $(".circle").each(function(){
+            let elementid = $(this).attr("id")
+            let value = $(this).attr("data-value");
+            let color = $(this).attr("data-color");
+            let text = $(this).attr("data-text")
+            var myCircle = Circles.create({
+                id:                  elementid,
+                radius:              80,
+                value:               value,
+                maxValue:            100,
+                width:               15,
+                text:                function(value){return text},
+                colors:              ['#D3B6C6',color],
+                duration:            400,
+                wrpClass:            'circles-wrp',
+                textClass:           'circles-text',
+                valueStrokeClass:    'circles-valueStroke',
+                maxValueStrokeClass: 'circles-maxValueStroke',
+                styleWrapper:        true,
+                styleText:           true
+            });
+        })
+    </script>
+</body>
+</html>
