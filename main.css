@@ -1,17 +1,59 @@
+*{
+    box-sizing: border-box;
+}
 body{
     padding: 0;
     margin: 0;
+}
+header{
+    background-color:darkblue;;
+    margin-bottom:30px;
+    padding:10px 0;
+    color:white;
+}
+header nav{
+    display:flex;
+    justify-content:space-between;
+}
+header nav > div{
+    flex-basis:50%;
+    border:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+}
+header nav .server_info{
+    border:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+    display:flex;
+    align-items:center;
+    flex-direction:row;
+}
+header .server_info span{
+    display:inline-block !important;
+    margin:0 !important;
+    margin-right:10px !important;
+}
+
+.text-right{
+    text-align:right;
+    justify-content:end;
+}
+.container{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 .flex{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
-    background-color: gray;
     padding: 0;
 }
 .flex .stats_holder{
     text-align: center;
-    flex-basis: 23%;
+    flex-basis: 18%;
     background-color: white;
     border-radius: 10px;
     margin: 10px;
@@ -47,3 +89,27 @@ body{
 .txt-green{
     color: rgb(63, 243, 63);
 }
+
+.charts, .data_holder{
+    display: flex;
+    justify-content:start;
+    padding: 30px 0;
+    flex-wrap:wrap;
+}
+.speed-box{
+    margin-top:50px;    
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.charts div, .data_holder > div{
+    flex-basis: 45%;
+    margin:15px 30px;
+    justify-content:center;
+    display:flex;
+}
+
+.data_holder{
+    justify-content:center !important;
+    padding-top:0;
+}
+
